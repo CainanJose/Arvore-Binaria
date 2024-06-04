@@ -1,10 +1,12 @@
 from Aniversariante import Aniversariante
 from BinaryTree import BinaryTree
+from datetime import date
 
 
 class GerenciadorAniversarios:
     def __init__(self):
         self.arvore = BinaryTree()
+    
 
     def inserirAniversariante(self, aniversariante):
         mes = aniversariante.mes
@@ -41,6 +43,7 @@ class GerenciadorAniversarios:
             return None
 
     def menu(self):
+        atual = 2024
         while True:
             print("\nMenu:")
             print("1. Inserir um Aniversariante")
@@ -54,7 +57,9 @@ class GerenciadorAniversarios:
                 nome = input("Nome: ")
                 dia = int(input("Dia: "))
                 mes = int(input("Mês: "))
-                self.inserirAniversariante(Aniversariante(nome, dia, mes))
+                ano = int(input("Ano: "))
+                self.inserirAniversariante(Aniversariante(nome, dia, mes, ano))
+
             elif opcao == '2':  # Submenu de busca
                 while True:
                     print("\nBuscar Aniversariantes:")
@@ -93,7 +98,8 @@ class GerenciadorAniversarios:
                     nome = input(f"Nome do aniversariante {i+1}: ")
                     dia = int(input(f"Dia do aniversário de {nome}: "))
                     mes = int(input(f"Mês do aniversário de {nome}: "))
-                    self.inserirAniversariante(Aniversariante(nome, dia, mes))
+                    ano = int(input(f"Ano do aniversário de {nome}: "))
+                    self.inserirAniversariante(Aniversariante(nome, dia, mes, ano))
 
             elif opcao == '4':
                 break
@@ -104,10 +110,10 @@ class GerenciadorAniversarios:
 # Criação de aniversariantes e inserção na árvore
 gerenciador = GerenciadorAniversarios()
 aniversariantes_predefinidos = [
-    Aniversariante("João", 15, 5),
-    Aniversariante("Maria", 22, 3),
-    Aniversariante("Pedro", 8, 5),
-    Aniversariante("Ana", 10, 1),
+    Aniversariante("João", 15, 5, 1999,),
+    Aniversariante("Maria", 22, 3, 2004),
+    Aniversariante("Pedro", 8, 5, 2001),
+    Aniversariante("Ana", 10, 1, 2000),
 ]
 
 for aniversariante in aniversariantes_predefinidos:
