@@ -15,6 +15,18 @@ class Aniversariante:
         if (diaAtual.month, diaAtual.day) < (nasc.month, nasc.day): 
             idade -= 1  
         return idade
+    
+    def mensagem(self):
+        nasc = datetime(self.ano, self.mes, self.dia)
+        diaAtual = datetime.now()
+
+        if (diaAtual.month, diaAtual.day) == (nasc.month, nasc.day): 
+             meng = "Feliz aniverario!!"
+        else:
+            meng = "Vai fazer aniversario!"
+        return meng
 
     def __str__(self):
-        return f"{self.nome} - {self.dia}/{self.mes}/{self.ano} - Idade: {self.idade()} anos"
+        return f"{self.nome} - {self.dia}/{self.mes}/{self.ano} - Idade: {self.idade()} anos \n {self.mensagem()} \n"
+            
+    

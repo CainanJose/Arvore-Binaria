@@ -110,10 +110,10 @@ class GerenciadorAniversarios:
 # Criação de aniversariantes e inserção na árvore
 gerenciador = GerenciadorAniversarios()
 aniversariantes_predefinidos = [
-    Aniversariante("João", 15, 5, 1999,),
+    Aniversariante("João", 4, 6, 2001,),
     Aniversariante("Maria", 22, 3, 2004),
     Aniversariante("Pedro", 8, 5, 2001),
-    Aniversariante("Ana", 10, 1, 2000),
+    Aniversariante("Ana", 10, 12, 2000),
 ]
 
 for aniversariante in aniversariantes_predefinidos:
