@@ -1,6 +1,6 @@
 from Aniversariante import Aniversariante
 from BinaryTree import BinaryTree
-from datetime import date
+
 
 
 class GerenciadorAniversarios:
@@ -32,13 +32,13 @@ class GerenciadorAniversarios:
             if dia is None:
                 return mes.aniversariantes  # Retorna a lista completa do mês
             else:
-                aniversariantes_encontrados = []
+                aniver = []
                 atual = mes.aniversariantes.head
                 while atual:
                     if atual.value.dia == dia:
-                        aniversariantes_encontrados.append(atual.value)
+                        aniver.append(atual.value)
                     atual = atual.next
-                return aniversariantes_encontrados
+                return aniver
         else:
             return None
 
